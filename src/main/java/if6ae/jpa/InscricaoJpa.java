@@ -18,7 +18,7 @@ import javax.persistence.criteria.Root;
  *
  * @author user
  */
-public class InscricaoJpa {
+public class InscricaoJpa extends JpaController{
     
     public Inscricao findByNumero(int numero){
         EntityManager em = getEntityManager();

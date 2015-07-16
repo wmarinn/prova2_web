@@ -17,7 +17,7 @@ import javax.persistence.criteria.Root;
  *
  * @author user
  */
-public class InscricaoMinicursoJpa {
+public class InscricaoMinicursoJpa extends JpaController{
     
     public List<Inscricao> findInscricaoMinicursoByNumero(int numero){
         EntityManager em = getEntityManager();
