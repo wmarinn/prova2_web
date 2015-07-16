@@ -68,11 +68,11 @@ public class Inscricao_minicurso {
         this.data_hora = data_hora;
     }
 
-    public String getSituacao() {
+    public Integer getSituacao() {
         return situacao;
     }
 
-    public void setSituacao(String situacao) {
+    public void setSituacao(Integer situacao) {
         this.situacao = situacao;
     }
     
