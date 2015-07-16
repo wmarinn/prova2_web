@@ -1,16 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="./WEB-INF/templates/principal.xhtml">
+
+    <ui:define name="styles">
+        <link href="./css/inscricao.css" rel="stylesheet" type="text/css" />
+    </ui:define>
+
+    <ui:define name="metadata">
+    </ui:define>
+
+    <ui:define name="javascript">
+    </ui:define>
+<!-- ARRUMAR OS VALUES, ESTAO DA ATIVIDADE 4.2!!!!! -->
+    <ui:define name="content">
+        <h:form>
+        <h:dataTable id="ldm"
+             summary="Lista de inscricoes"
+             value="#{inscricaoBean.ldm}" 
+             border="1"
+             var="ldm">
+            <h:column> 
+        <f:facet name="header">
+            <h:outputText value="numero_inscricao" />
+        </f:facet>
+                <h:outputText value="#{ldm.numero}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="CPF" />
+        </f:facet>
+        <h:commandLink value="#{ldm.cpf}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="nome" />
+        </f:facet>
+        <h:outputText value="#{ldm.nome}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="cidade" />
+        </f:facet>
+        <h:outputText value="#{ldm.cidade}"/>
+    </h:column>
+    <h:column>
+        <f:facet name="header">
+            <h:outputText value="Estado" />
+        </f:facet>
+        <h:commandButton value="#{ldm.estado}"/>
+    </h:column>
+        </h:dataTable>
+    </h:form>
+    </ui:define>
+
+</ui:composition>
