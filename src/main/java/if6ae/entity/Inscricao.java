@@ -26,10 +26,11 @@ import javax.validation.constraints.Size;
  * @author user
  */
 public class Inscricao implements Serializable{
-    private static final long serialVersionUID = 1L;
-    @Id
+    @Column(name = "numero")
+    private Long numero;
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 20)
     @Column(name = "cpf")
     private Long cpf;
     @Basic(optional = false)
